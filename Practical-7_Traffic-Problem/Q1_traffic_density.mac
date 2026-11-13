@@ -1,0 +1,18 @@
+eq1:'diff(x,t)=x*sin(t);
+ode2(eq1,x,t);
+gsol1:solve(x=c1*%e^(-cos(t)),c1);
+eq2:'diff(ρ,x)=0;
+ode2(eq2,ρ,x);
+gsol2:solve(ρ=c2,c2);
+phii:rhs(first(gsol1));
+shii:rhs(first(gsol2));
+gs:shii=f(phii);
+gsol:solve(gs,ρ);
+define(ρ(x,t),rhs(first(gsol)));
+id:ρ(x,0)=1+1/(1+x^2);
+arbfn:ev(id,x=t/%e);
+define(f(t),rhs(arbfn));
+'ρ(x,t)=ρ(x,t);
+wxdraw3d(enhanced3d=true, explicit(ρ(x,t),x,0,2,t,0,2),
+    parametric((%e)^(-cos(t)),t,0,t,0,2),
+    title="Characteristic Base curve with Density Function");
