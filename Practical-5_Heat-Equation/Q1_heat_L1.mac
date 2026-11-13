@@ -1,0 +1,12 @@
+kill(all);
+k:4;
+L:1;
+f(x):=x^2*(1-x);
+a(n):=(2/L)*integrate(f(a)*sin(n*%pi*a/L),a,0,L);
+a(n);
+u(x,t):=sum(a(n)*exp((-(n*%pi/L)^2)*k*t)*sin(n*%pi*x/L), n, 1, 5);
+load(draw);
+wxdraw2d(explicit(u(x,0),x,0,1),title="Heat at t=0");
+wxdraw2d(explicit(u(x,0.1),x,0,1),title="Heat at t=0.1");
+wxdraw2d(explicit(u(x,0.4),x,0,1),title="Heat at t=0.4");
+wxplot3d(u(x,t),[x,0,1],[t,0,8]);

@@ -1,0 +1,1 @@
+U(x,t)=sum(a(n)*exp((-(n*%pi/L)^2)*k*t)*sin(n*%pi*x/L), n, 1, inf);
