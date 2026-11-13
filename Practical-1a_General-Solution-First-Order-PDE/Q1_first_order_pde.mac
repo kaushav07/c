@@ -1,0 +1,11 @@
+eq1:'diff(y,x)=-1;
+ode2(eq1,y,x);
+gsol1:solve(y=c1-x,c1);
+eq2:'diff(u,x)=1;
+ode2(eq2,u,x);
+gsol2:solve(u=x+c2,c2);
+phii:rhs(first(gsol1));
+shii:rhs(first(gsol2));
+gs:shii=f(phii);
+gsol:solve(gs,u);
+define(u(x,y),rhs(first(gsol)));
