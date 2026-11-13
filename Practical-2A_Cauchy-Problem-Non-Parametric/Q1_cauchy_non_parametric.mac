@@ -1,0 +1,15 @@
+kill(all);
+eq1:'diff(y,x)=-1;
+gs1:ode2(eq1,y,x);
+gsol1:solve(ev(gs1,%c=c1),c1);
+eq2:'diff(u,x)=1;
+gs2:ode2(eq2,u,x);
+gsol2:solve(ev(gs2,%c=c2),c2);
+phii:rhs(first(gsol1));
+shii:rhs(first(gsol2));
+gs:shii=f(phii);
+gsol:solve(gs,u);
+define(u(x,y),rhs(first(gsol)));
+arbfn:solve(u(x,0)=x^2,f(x)); f(x);
+'u(x,y)=u(x,y);
+wxplot3d(u(x,y),[x,-10,10],[y,-7,7]);
