@@ -1,0 +1,4 @@
+draw3d(nticks=300, parametric(sin(t)-t*cos(t), cos(t)+t*sin(t), t^2, t, 0, 6*%pi));
+draw3d(nticks=300, parametric(sqrt(2)*t, %e^t, %e^(-t), t, -2, 3));
+draw3d(nticks=300, parametric(sin(2*t), log(1+t), t, t, 0, 4*%pi));
+draw3d(nticks=300, parametric(log(t^2+2), atan(3*t), sqrt(t^2+1), t, -3, 5));

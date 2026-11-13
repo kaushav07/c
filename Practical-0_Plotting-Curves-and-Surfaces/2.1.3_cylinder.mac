@@ -1,0 +1,13 @@
+draw3d(
+    user_preamble = "set xyplane at 0",
+    proportional_axes = xyz,
+    xaxis = true, xaxis_type = solid, xaxis_color = red,
+    xrange = [-1, 1],
+    yaxis = true, yaxis_type = solid, yaxis_color = green,
+    yrange = [-1, 1],
+    zaxis = true, zaxis_type = solid, zaxis_color = violet,
+    zrange = [-2, 2],
+    nticks = 200,
+    parametric_surface(cos(u), sin(u),
+        v, u, 0, 2*%pi, v, 0, 2)
+);

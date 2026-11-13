@@ -1,0 +1,4 @@
+draw3d(parametric_surface(u*cos(v), u*sin(v), u, u, 0, 2, v, 0, 2*%pi));
+draw3d(parametric_surface(u*cos(v), u*sin(v), v, u, 0, 2, v, 0, 2*%pi));
+draw3d(parametric_surface((2+cos(u))*cos(v), (2+cos(u))*sin(v), sin(u), u, 0, 2*%pi, v, 0, 2*%pi));
+draw3d(parametric_surface(2*cos(u)*cos(v), 2*cos(u)*sin(v), 2*sin(u), u, 0, 2*%pi, v, 0, %pi));

@@ -1,0 +1,13 @@
+g(x):=x+sin(3*x);
+u(x, y):=g(x);
+draw3d(
+    user_preamble = "set xyplane at 0",
+    proportional_axes = xyz,
+    xaxis = true, xaxis_type = solid, xaxis_color = red,
+    xrange = [-2, 2],
+    yaxis = true, yaxis_type = solid, yaxis_color = green,
+    yrange = [-2, 2],
+    zaxis = true, zaxis_type = solid, zaxis_color = violet,
+    zrange = [-2, 2],
+    explicit(u(x, y), x, -2, 2, y, -2, 2)
+);

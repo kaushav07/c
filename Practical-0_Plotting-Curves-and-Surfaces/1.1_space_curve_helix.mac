@@ -1,0 +1,60 @@
+a:5;
+b:0.5;
+draw3d(
+    parametric(cos(a*t), sin(a*t), b*t, t, 0, 2)
+);
+draw3d(
+    nticks = 200,
+    parametric(cos(a*t), sin(a*t), b*t, t, 0, 2)
+);
+draw3d(
+    xaxis = true, xaxis_type = solid, xaxis_color = red,
+    nticks = 200,
+    parametric(cos(a*t), sin(a*t), b*t, t, 0, 2)
+);
+draw3d(
+    xaxis = true, xaxis_type = solid, xaxis_color = red,
+    yaxis = true, yaxis_type = solid, yaxis_color = green,
+    nticks = 200,
+    parametric(cos(a*t), sin(a*t), b*t, t, 0, 2)
+);
+draw3d(
+    proportional_axes = xyz,
+    xaxis = true, xaxis_type = solid, xaxis_color = red,
+    xrange = [-1, 1],
+    yaxis = true, yaxis_type = solid, yaxis_color = green,
+    nticks = 200,
+    parametric(cos(a*t), sin(a*t), b*t, t, 0, 2)
+);
+draw3d(
+    proportional_axes = xyz,
+    xaxis = true, xaxis_type = solid, xaxis_color = red,
+    xrange = [-1, 1],
+    yaxis = true, yaxis_type = solid, yaxis_color = green,
+    yrange = [-1, 1],
+    nticks = 200,
+    parametric(cos(a*t), sin(a*t), b*t, t, 0, 2)
+);
+draw3d(
+    proportional_axes = xyz,
+    xaxis = true, xaxis_type = solid, xaxis_color = red,
+    xrange = [-1, 1],
+    yaxis = true, yaxis_type = solid, yaxis_color = green,
+    yrange = [-1, 1],
+    zaxis = true, zaxis_type = solid, zaxis_color = violet,
+    zrange = [0, 2],
+    nticks = 200,
+    parametric(cos(a*t), sin(a*t), b*t, t, 0, 2)
+);
+draw3d(
+    user_preamble = "set xyplane at 0",
+    proportional_axes = xyz,
+    xaxis = true, xaxis_type = solid, xaxis_color = red,
+    xrange = [-1, 1],
+    yaxis = true, yaxis_type = solid, yaxis_color = green,
+    yrange = [-1, 1],
+    zaxis = true, zaxis_type = solid, zaxis_color = violet,
+    zrange = [0, 2],
+    nticks = 200,
+    parametric(cos(a*t), sin(a*t), b*t, t, 0, 2)
+);
