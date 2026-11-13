@@ -1,0 +1,12 @@
+kill(all);
+u(x,t):=(f(x+c*t)+f(x-c*t))/2 + (1/(2*c))*(integrate(g(a),a,x-c*t,x+c*t));
+f(x):= if (abs(x)<=1) then 1-abs(x) else 0;
+g(x):=0;
+c:3;
+u(x,t);
+wxdraw2d(explicit(u(x,0),x,-10,10),title="wave at t=0");
+wxdraw2d(explicit(u(x,0.2),x,-10,10),title="wave at t=0.2");
+wxdraw2d(explicit(u(x,0.4),x,-10,10),title="wave at t=0.4");
+wxdraw2d(explicit(u(x,1),x,-10,10),title="wave at t=1");
+wxdraw2d(explicit(u(x,1.7),x,-10,10),title="wave at t=1.7");
+wxplot3d(u(x,t),[x,-8,8],[t,0,1.4]);

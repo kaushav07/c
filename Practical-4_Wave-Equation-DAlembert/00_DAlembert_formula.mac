@@ -1,0 +1,1 @@
+U(x,t)=(f(x+c*t)+f(x-c*t))/2 + (1/(2*c))*(integrate(g(a),a,x-c*t,x+c*t));

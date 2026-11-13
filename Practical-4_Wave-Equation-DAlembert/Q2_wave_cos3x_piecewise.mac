@@ -1,0 +1,13 @@
+kill(all);
+u(x,t):=(f(x+c*t)+f(x-c*t))/2 + (1/(2*c))*(integrate(g(a),a,x-c*t,x+c*t));
+f(x):= if (x > (-%pi/2) and x < (%pi/2)) then (cos(x))^3 else 0;
+g(x):=0;
+c:1;
+u(x,t);
+u(3,5); u(1,2); u(10,20);
+wxdraw2d(explicit(u(x,0),x,-8,8),title="wave at t=0");
+wxdraw2d(explicit(u(x,1),x,-8,8),title="wave at t=1");
+wxdraw2d(explicit(u(x,2),x,-8,8),title="wave at t=2");
+wxdraw2d([color=red,explicit(u(x,3),x,-8,8),color=blue,explicit(u(x,4),x,-8,8),
+    color=green,explicit(u(x,5),x,-8,8)]);
+wxplot3d(u(x,t),[x,-8,8],[t,0,5]);

@@ -1,0 +1,14 @@
+kill(all);
+u(x,t):=(f(x+c*t)+f(x-c*t))/2 + (1/(2*c))*(integrate(g(a),a,x-c*t,x+c*t));
+f(x):=sin(x);
+g(x):=cos(x);
+c:2;
+u(x,t);
+ratsimp(%);
+'u(x,t)=%;
+wxdraw2d(explicit(u(x,0),x,-10,10),title="wave at t=0");
+wxdraw2d(explicit(u(x,1),x,-10,10),title="wave at t=1");
+wxdraw2d(explicit(u(x,2),x,-10,10),title="wave at t=2");
+wxdraw2d(explicit(u(x,3),x,-10,10),title="wave at t=3");
+wxdraw2d(explicit(u(x,4),x,-10,10),title="wave at t=4");
+wxplot3d(u(x,t),[x,-10,10],[t,0,8]);
