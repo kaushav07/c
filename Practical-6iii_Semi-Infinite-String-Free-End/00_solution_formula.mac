@@ -1,0 +1,2 @@
+U(x,t)= if(x>c*t) then (1/2)*(f(x+c*t)+f(x-c*t))+(1/(2*c))*integrate(g(a),a,x-c*t,x+c*t)
+    else if (x<c*t) then (1/2)*(f(x+c*t)+f(c*t-x))+(1/(2*c))*(integrate(g(a),a,0,x+c*t)+integrate(g(a),a,0,c*t-x));

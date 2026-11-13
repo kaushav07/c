@@ -1,0 +1,12 @@
+kill(all);
+u(x,t):= if(x>c*t) then (1/2)*(f(x+c*t)+f(x-c*t))+(1/(2*c))*integrate(g(a),a,x-c*t,x+c*t)
+    else if (x<c*t) then (1/2)*(f(x+c*t)+f(c*t-x))+(1/(2*c))*(integrate(g(a),a,0,x+c*t)+integrate(g(a),a,0,c*t-x));
+c:2;
+f(x):=cos(%pi*x/2);
+g(x):=0;
+assume(x>0);
+u(x,t);
+u(7,9);
+load(draw)$
+wxdraw2d(explicit(u(x,0),x,0,10),title="Wave at t=0");
+wxdraw2d(explicit(u(x,1),x,3,10),title="Wave at t=1");
