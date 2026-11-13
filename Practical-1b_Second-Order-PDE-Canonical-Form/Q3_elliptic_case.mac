@@ -1,0 +1,28 @@
+kill(all);
+assume(y>0);
+assume(x>0);
+A:1;
+B:2;
+C:5;
+D:1;
+E:0;
+F:0;
+G:0;
+Discr:B^2-4*A*C;
+eq1:'diff(y,x)=(B-sqrt(Discr))/(2*A);
+sol1:solve(ode2(eq1,y,x),%c);
+eq2:'diff(y,x)=(B+sqrt(Discr))/(2*A);
+sol2:solve(ode2(eq2,y,x),%c);
+α:rhs(first((sol1)));
+β:rhs(first((sol2)));
+ξ:ratsimp((α+β)/2);
+η:ratsimp((α-β)/(2*%i));
+ξy:diff(ξ,y)$ ξx:diff(ξ,x)$ ξyy:diff(ξ,y,2)$ ξxx:diff(ξ,x,2)$ ξxy:diff(ξx,y)$
+ηy:diff(η,y)$ ηx:diff(η,x)$ ηyy:diff(η,y,2)$ ηxx:diff(η,x,2)$ ηxy:diff(ηx,y)$
+u_x:ξx*u_ξ+ηx*u_η$
+u_y:ξy*u_ξ+ηy*u_η$
+u_xx:ξx^2*u_ξξ+2*ξx*ηx*u_ξη+ηx^2*u_ηη+ξxx*u_ξ+ηxx*u_η$
+u_xy:ξx*ξy*u_ξξ+(ξx*ηy+ξy*ηx)*u_ξη+ηx*ηy*u_ηη+ξxy*u_ξ+ηxy*u_η$
+u_yy:ξy^2*u_ξξ+2*ξy*ηy*u_ξη+ηy^2*u_ηη+ξyy*u_ξ+ηyy*u_η$
+eq3:A*u_xx+B*u_xy+C*u_yy+D*u_x+E*u_y+F*u=G;
+ratsimp(%);
