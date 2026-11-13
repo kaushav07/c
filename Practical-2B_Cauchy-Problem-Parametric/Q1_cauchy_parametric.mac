@@ -1,0 +1,17 @@
+kill(all)$
+eq1:diff(x(t),t)=u(t);
+eq2:diff(y(t),t)=1;
+eq3:diff(u(t),t)=1;
+atvalue(x(t),t=0,2*s^2);
+atvalue(y(t),t=0,2*s);
+atvalue(u(t),t=0,0);
+psol:desolve([eq1,eq2,eq3],[x(t),y(t),u(t)]);
+wxdraw3d(color=red, parametric(2*s^2, 2*s, 0, s, 2, 10),
+    title="Initial curve");
+wxdraw3d(color=cyan, enhanced3d=true,
+    parametric_surface((t^2)/2+2*s^2, t+2*s, t, s, 1, 100, t, -300, 300),
+    title="Integral Surface");
+wxdraw3d(color=cyan,
+    parametric_surface((t^2)/2+2*s^2, t+2*s, t, s, 1, 100, t, -300, 300),
+    color=red, parametric(2*s^2, 2*s, 0, s, 1, 100),
+    title="Integral surface with Initial curve");
